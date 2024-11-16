@@ -22,7 +22,7 @@ jobs:
         # https://github.com/actions/checkout#usage
         # uncomment if you use submodules within the repository
         with:
-          github_token: ${{ secrets.WORKFLOW_TOKEN }}
+          token: ${{ secrets.WORKFLOW_TOKEN }}
         #   submodules: true
 
       - name: actions-template-sync
