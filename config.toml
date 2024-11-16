@@ -35,6 +35,7 @@ included-patches = ""
 excluded-patches = ""
 
 [Twitch]
+enabled = false
 apkmirror-dlurl = "https://www.apkmirror.com/apk/twitch-interactive-inc/twitch/"
 # archive-dlurl = "https://archive.org/download/jhc-apks/apks/tv.twitch.android.app"
 
