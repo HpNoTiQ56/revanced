@@ -12,6 +12,7 @@ patches-version = "latest" # 'latest', 'dev', or a version number. default: "lat
 # you can use rvmm-config-gen to generate a config
 
 [YouTube]
+enabled = false
 build-mode = "module"
 arch = "arm64-v8a"
 excluded-patches = ""
@@ -21,6 +22,7 @@ apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube" # fallback
 #archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.youtube"
 
 [Music]
+enabled = false
 build-mode = "module"
 arch = "arm64-v8a"
 version = "latest"
@@ -28,6 +30,7 @@ version = "latest"
 archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.apps.youtube.music"
 
 [googlephotos]
+enabled = false
 apkmirror-dlurl = "https://apkmirror.com/apk/google-inc/photos/"
 arch = "arm64-v8a"
 build-mode = "module"
@@ -119,7 +122,6 @@ archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.instagram.androi
 
 [Yuka]
 build-mode = "module"
-version = "latest"
 dpi="120-640dpi"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/yuka-apps/yuka-food-cosmetic-scan/"
 # archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.apps.youtube.music"
