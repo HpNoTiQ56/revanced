@@ -118,7 +118,6 @@ archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.instagram.androi
 
 [Yuka]
 build-mode = "module"
-arch = "universal"
 version = "latest"
 dpi="120-640dpi"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/yuka-apps/yuka-food-cosmetic-scan/"
