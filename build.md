@@ -2,7 +2,7 @@ Facebook: 490.0.0.63.82
 Instagram: 275.0.0.27.98  
 Messenger: 430.0.0.0.8  
 Music: 7.22.51  
-Twitch: 16.9.1  
+YouTube: 19.45.36  
 googlephotos: 7.8.0.695767955  
 
 Install [Microg](https://github.com/ReVanced/GmsCore/releases) for non-root YouTube and YT Music APKs  
