@@ -108,11 +108,11 @@ apkmirror-dlurl = "https://www.apkmirror.com/apk/facebook-2/facebook/"
 [Strava]
 build-mode = "module"
 arch = "arm64-v8a"
-version = "387.9"
-dpi="anydpi"
+version = "latest"
+dpi="120-640dpi"
 #apkmirror-dlurl = "https://www.apkmirror.com/apk/strava-inc/strava-running-and-cycling-gps/"
 #archive-dlurl = "https://archive.org/download/jhc-apksapkscom.stravacom.strava-385.14-all"
-uptodown-dlurl = "https://strava.fr.uptodown.com/android"
+#uptodown-dlurl = "https://strava.fr.uptodown.com/android"
 
 [Instagram]
 enabled = false
