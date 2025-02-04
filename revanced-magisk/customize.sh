@@ -1,4 +1,5 @@
 . "$MODPATH/config"
+. "$MODPATH/common.sh"
 
 ui_print ""
 if [ -n "$MODULE_ARCH" ] && [ "$MODULE_ARCH" != "$ARCH" ]; then
@@ -19,23 +20,12 @@ RVPATH=/data/adb/rvhc/${MODPATH##*/}.apk
 
 set_perm_recursive "$MODPATH/bin" 0 0 0755 0777
 
-if su -M -c true >/dev/null 2>/dev/null; then
-	alias mm='su -M -c'
-else alias mm='nsenter -t1 -m'; fi
-
 mm grep -F "$PKG_NAME" /proc/mounts | while read -r line; do
 	ui_print "* Un-mount"
 	mp=${line#* } mp=${mp%% *}
 	mm umount -l "${mp%%\\*}"
 done
 am force-stop "$PKG_NAME"
-
-pmex() {
-	OP=$(pm "$@" 2>&1 </dev/null)
-	RET=$?
-	echo "$OP"
-	return $RET
-}
 
 if ! pmex path "$PKG_NAME" >&2; then
 	if pmex install-existing "$PKG_NAME" >&2; then
@@ -136,9 +126,9 @@ install() {
 	settings put global verifier_verify_adb_installs "$VERIF_ADB"
 }
 if [ $INS = true ] && ! install; then abort; fi
+BASEPATHLIB=${BASEPATH}/lib/${ARCH}
 if [ $INS = true ] || [ -z "$(ls -A1 "$BASEPATHLIB")" ]; then
 	ui_print "* Extracting native libs"
-	BASEPATHLIB=${BASEPATH}/lib/${ARCH}
 	if [ ! -d "$BASEPATHLIB" ]; then mkdir -p "$BASEPATHLIB"; else rm -f "$BASEPATHLIB"/* >/dev/null 2>&1 || :; fi
 	if ! op=$(unzip -o -j "$MODPATH/$PKG_NAME.apk" "lib/${ARCH_LIB}/*" -d "$BASEPATHLIB" 2>&1); then
 		ui_print "ERROR: extracting native libs failed"
